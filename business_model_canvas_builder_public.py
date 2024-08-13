@@ -26,7 +26,7 @@ groq_api_key = st.secrets["GROQ_API_KEY"]
 
 # create a text input for the user to input the name of the customer
 
-value_proposition = st.text_input('What is the value prposition for your business model')
+value_proposition = st.text_input('What is the value proposition for your business model')
 customer_pofile = st.text_input('Please provide a description of the customer segment that you are targeting')
 
 
