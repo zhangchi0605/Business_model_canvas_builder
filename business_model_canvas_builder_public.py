@@ -26,7 +26,7 @@ groq_api_key = st.secrets["GROQ_API_KEY"]
 
 # create a text input for the user to input the name of the customer
 
-value_proposition = st.text_input('What is the value proposition for your business model')
+value_proposition = st.text_input('What is the value prposition for your business model')
 customer_pofile = st.text_input('Please provide a description of the customer segment that you are targeting')
 
 
@@ -130,43 +130,43 @@ if st.button('Start Business Model Canvas Generation'):
 
     # Create tasks for the agents
     generate_customer_relationships = Task(
-        description=f"""Generate a customer relationship description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}.""",
+        description=f"""Generate a customer relationship description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}. Pay special attention to the question whether you need to have an arm's length relationship with customers or whethr a more embedded customer relationship is crucial. Try to be creative in thinking about distributiun channels to make sure that they can help in buildig a unfair advantage""",
         expected_output='As output, you provide a clear description of the customer relationship dimension for the business model canvas.',
         agent=customer_relationship_analyzer
     )
 
     generate_ditribution_channels = Task(
-        description=f"""Generate a distribution channel description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}.""",
+        description=f"""Generate a distribution channel description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}. Pay special attention to the question whether direct or indirect channels should be used and whether the channels should be owned or outsourced. Try to be creative in thinking about distributiun channels to make sure that they can help in buildig a unfair advantage""",
         expected_output="""As output, you provide a clear description of the distribution channel dimension for the business model canvas.""",
         agent=distribution_channel_analyzer
     )
 
     generate_revnue_streams = Task(
-        description=f"""Generate a revenue stream description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}..""",
+        description=f"""Generate a revenue stream description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}. Try to come up with creative ways to generate revenue streams that are aligned with the value proposition and customer profile and can help in building an unfair advantage. Make sure to have a focused revenue stream model.""", 
         expected_output='As output, you provide a clear description of the revenue stream dimensio for the busimess model canvas.',
         agent=revenue_streams_analyzer
     )
 
     generate_cost_structure = Task(
-        description=f"""Generate a cost structure description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}..""",
+        description=f"""Generate a cost structure description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}. Pay special attention to the costs that will be incurred to deliver the value proposition and make sure that the cost structure is aligned with the revenue streams and the value proposition. Avoid exhaustive lists of costs that are straightforward to identify.""",
         expected_output='As output, you provide a clear description of the cost structure dimension for the business model canvas.',
         agent=cost_structure_analyzer
     )
 
     generate_key_activities = Task(
-        description=f"""Generate a key activities description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}..""",
+        description=f"""Generate a key activities description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}. Focus on key activities that are essential for creating an unfair advantage.""",
         expected_output='As output, you provide a clear description of the key activities dimension for the business model canvas.',
         agent=key_activities_analyzer
     )
 
     generate_key_resources = Task(
-        description=f"""Generate a key resources description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}..""",
+        description=f"""Generate a key resources description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}. Focus on key resources that are essential for creating an unfair advantage.""",
         expected_output='As output, you provide a clear description of the key resources dimension for the business model canvas.',
         agent=key_resources_analyzer
     )
 
     generate_key_partnerships = Task(
-        description=f"""Generate a key partnerships description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}..""",
+        description=f"""Generate a key partnerships description that can be used for the business model canvas. The value proposition for the business model is: {value_proposition}. The customer profile is: {customer_pofile}.Focus on key partnerships that are essential for creating an unfair advantage""",
         expected_output='As output, you provide a clear description of the key partnerships dimension for the business model canvas.',
         agent=key_partnerships_analyzer
     )   
